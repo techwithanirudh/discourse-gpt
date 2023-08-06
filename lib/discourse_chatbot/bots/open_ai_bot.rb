@@ -6,7 +6,7 @@ module ::DiscourseChatbot
   class OpenAIBot < Bot
 
     def initialize
-      @client = ::OpenAI::Client.new(access_token: SiteSetting.chatbot_open_ai_token)
+      @client = ::OpenAI::Client.new(access_token: SiteSetting.chatbot_open_ai_token, uri_base: "https://chimeragpt.adventblocks.cc/api")
     end
 
     def get_response(prompt)
